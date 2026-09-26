@@ -1,0 +1,56 @@
+# ==============================
+# DOCCI MEMER - Git Ignore
+# ==============================
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Windows temporary/system files
+Thumbs.db
+desktop.ini
+
+# macOS system files
+.DS_Store
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment / secret files
+.env
+.env.*
+!.env.example
+
+# Python test/cache files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local development files
+*.local
+
+# Backup files
+*.bak
+*.swp
+*.swos

@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #f2f2f2;
+  --border-thick: 4px;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: "Arial Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- decorative floating doodles ---------- */
+
+.doodle {
+  position: fixed;
+  font-size: 2.5rem;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+.doodle-1 {
+  top: 8%;
+  left: 4%;
+  transform: rotate(-15deg);
+}
+
+.doodle-2 {
+  top: 70%;
+  left: 90%;
+  transform: rotate(20deg);
+  animation-delay: 1s;
+}
+
+.doodle-3 {
+  top: 40%;
+  left: 92%;
+  transform: rotate(-10deg);
+  animation-delay: 2s;
+}
+
+.doodle-4 {
+  top: 80%;
+  left: 3%;
+  transform: rotate(10deg);
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ---------- header ---------- */
+
+.header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--black);
+  color: var(--white);
+  text-shadow:
+    4px 4px 0 var(--black),
+    -1px -1px 0 var(--black),
+    1px -1px 0 var(--black),
+    -1px 1px 0 var(--black);
+}
+
+.subtitle {
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  margin-top: 0.5rem;
+}
+
+/* ---------- layout ---------- */
+
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- mode switch ---------- */
+
+.mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.7rem 1.4rem;
+  border: var(--border-thick) solid var(--black);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--black);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mode-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.mode-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.mode-btn.active {
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 4px 4px 0 var(--gray);
+}
+
+/* ---------- 2-panel grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- panel base ---------- */
+
+.panel {
+  border: var(--border-thick) solid var(--black);
+  border-radius: 22px;
+  padding: 1.4rem;
+  background: var(--white);
+  position: relative;
+  box-shadow: 6px 6px 0 var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-label {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* ---------- webcam box ---------- */
+
+.webcam-box {
+  border: var(--border-thick) dashed var(--black);
+  border-radius: 16px;
+  background: var(--gray);
+  flex: 1;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.8rem 0 1.2rem;
+  overflow: hidden;
+}
+
+.webcam-icon {
+  font-size: 2.8rem;
+}
+
+.webcam-text {
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.big-btn {
+  width: 100%;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.9rem;
+  background: var(--black);
+  color: var(--white);
+  border: var(--border-thick) solid var(--black);
+  border-radius: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 var(--gray);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.big-btn:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translate(-2px, -2px);
+}
+
+.big-btn:active {
+  transform: scale(0.97);
+}
+
+.status {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--black);
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: var(--black);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ---------- meme box ---------- */
+
+.meme-box {
+  position: relative; /* so #reactionOverlay sizes to THIS box, not the whole panel */
+  flex: 1;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: var(--border-thick) dashed var(--black);
+  border-radius: 16px;
+  background: var(--gray);
+  gap: 0.6rem;
+  padding: 1rem;
+  margin: 0.8rem 0 1.2rem;
+  overflow: hidden;
+}
+
+.meme-title {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  margin: 0;
+  font-weight: bold;
+}
+
+.meme-sub {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2.5rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- phone reaction video ---------- */
+
+#reactionOverlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+#reactionVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}

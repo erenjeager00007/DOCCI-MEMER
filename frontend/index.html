@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DOCCI MEMER 🐶🐱</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- floating decorative doodles -->
+
+  <div class="doodle doodle-1">🐾</div>
+  <div class="doodle doodle-2">🐾</div>
+  <div class="doodle doodle-3">😹</div>
+  <div class="doodle doodle-4">🐕</div>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <h1 class="title">
+      DOCCI MEMER
+    </h1>
+
+    <p class="subtitle">
+      Make a face. Get a meme. 🐶🐱
+    </p>
+
+  </header>
+
+
+  <main class="main">
+
+    <!-- MODE SWITCH -->
+
+    <div class="mode-switch">
+
+      <button
+        class="mode-btn mode-dog active"
+        id="dogModeBtn"
+      >
+        🐶 DOG MODE
+      </button>
+
+      <button
+        class="mode-btn mode-cat"
+        id="catModeBtn"
+      >
+        🐱 CAT MODE
+      </button>
+
+    </div>
+
+
+    <!-- TWO PANEL LAYOUT -->
+
+    <div class="grid">
+
+
+      <!-- LEFT PANEL: CAMERA -->
+
+      <section class="panel webcam-panel">
+
+        <div class="panel-label">
+          STEP 1
+        </div>
+
+        <div
+          class="webcam-box"
+          id="webcamBox"
+        >
+
+          <span class="webcam-icon">
+            📷
+          </span>
+
+          <p class="webcam-text">
+            Camera goes here
+          </p>
+
+        </div>
+
+
+        <button
+          class="big-btn"
+          id="startCameraBtn"
+        >
+          START CAMERA
+        </button>
+
+
+        <div class="status">
+
+          <span
+            class="status-dot"
+            id="statusDot"
+          ></span>
+
+          <span id="statusText">
+            CAMERA OFFLINE
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- RIGHT PANEL: MEME -->
+
+      <section class="panel">
+
+        <div class="panel-label">
+          STEP 2
+        </div>
+
+        <div
+          class="meme-box"
+          id="memeBox"
+        >
+
+          <span class="webcam-icon">
+            🐶
+          </span>
+
+          <p class="meme-title">
+            NEUTRAL DOG MEME
+          </p>
+
+          <p class="meme-sub">
+            Waiting for your beautiful face... 🥹
+          </p>
+
+
+          <!-- PHONE REACTION OVERLAY -->
+
+          <div id="reactionOverlay">
+
+            <video
+              id="reactionVideo"
+              src="../phone_reaction/WhatsApp Video 2026-09-26 at 11.41.29 AM.mp4"
+              playsinline
+            ></video>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <p>
+      made with chaos + ✂️ by a person who should be doing homework
+    </p>
+
+  </footer>
+
+
+  <!-- ================================= -->
+  <!-- TENSORFLOW.JS                     -->
+  <!-- ================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+
+
+  <!-- ================================= -->
+  <!-- MEDIAPIPE FACE LANDMARKER          -->
+  <!-- ================================= -->
+
+  <script type="module">
+    import {
+      FaceLandmarker,
+      FilesetResolver
+    } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.0.1/+esm";
+
+    window.FaceLandmarker = FaceLandmarker;
+    window.FilesetResolver = FilesetResolver;
+
+    console.log("MediaPipe Face Landmarker library loaded ✅");
+  </script>
+
+
+  <!-- ================================= -->
+  <!-- COCO-SSD PHONE DETECTION           -->
+  <!-- ================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+
+
+  <!-- ================================= -->
+  <!-- MAIN PROJECT JAVASCRIPT            -->
+  <!-- ================================= -->
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
