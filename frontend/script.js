@@ -106,52 +106,52 @@ const MOUTH_LOWER_LIP_IDX = 14;
 
 const memeImages = {
 
-  dog: {
+dog: {
 
-    neutral: [
-      "../dog_memes/neutral/neutral1.jpeg",
-      "../dog_memes/neutral/neutral2.jpeg"
-    ],
+  neutral: [
+    "./dog_memes/neutral/neutral1.jpeg",
+    "./dog_memes/neutral/neutral2.jpeg"
+  ],
 
-    happy: [
-      "../dog_memes/happy/happy1.jpeg",
-      "../dog_memes/happy/happy2.jpeg"
-    ],
+  happy: [
+    "./dog_memes/happy/happy1.jpeg",
+    "./dog_memes/happy/happy2.jpeg"
+  ],
 
-    wink: [
-      "../dog_memes/wink/wink1.jpeg",
-      "../dog_memes/wink/wink2.jpeg"
-    ],
+  wink: [
+    "./dog_memes/wink/wink1.jpeg",
+    "./dog_memes/wink/wink2.jpeg"
+  ],
 
-    shocked: [
-      "../dog_memes/shocked/shocked1.jpeg",
-      "../dog_memes/shocked/shocked2.jpeg"
-    ]
+  shocked: [
+    "./dog_memes/shocked/shocked1.jpeg",
+    "./dog_memes/shocked/shocked2.jpeg"
+  ]
 
   },
 
   cat: {
 
-    neutral: [
-      "../cat_memes/neutral/neutral1.jpeg",
-      "../cat_memes/neutral/neutral2.jpeg"
-    ],
+  neutral: [
+    "./cat_memes/neutral/neutral1.jpeg",
+    "./cat_memes/neutral/neutral2.jpeg"
+  ],
 
-    happy: [
-      "../cat_memes/happy/happy1.jpeg",
-      "../cat_memes/happy/happy2.jpeg"
-    ],
+  happy: [
+    "./cat_memes/happy/happy1.jpeg",
+    "./cat_memes/happy/happy2.jpeg"
+  ],
 
-    wink: [
-      "../cat_memes/wink/wink1.jpeg",
-      "../cat_memes/wink/wink2.jpeg"
-    ],
+  wink: [
+    "./cat_memes/wink/wink1.jpeg",
+    "./cat_memes/wink/wink2.jpeg"
+  ],
 
-    shocked: [
-      "../cat_memes/shocked/shocked1.jpeg",
-      "../cat_memes/shocked/shocked2.jpeg"
-    ]
-
+  shocked: [
+    "./cat_memes/shocked/shocked1.jpeg",
+    "./cat_memes/shocked/shocked2.jpeg"
+  ]
+  
   }
 
 };
